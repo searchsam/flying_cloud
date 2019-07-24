@@ -55,3 +55,5 @@ $ sudo npm install nativescript -g --unsafe-perm
 $ ./$ANDROID_SDK/emulator/emulator -list-avds
 $ ./$ANDROID_SDK/emulator/emulator -avd Nexus_5_API_28
 ```
+
+Nada mas
