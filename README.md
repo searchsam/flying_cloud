@@ -28,18 +28,39 @@ export JAVA_HOME= "/usr/lib/jvm/" + "java-1.8.0-openjdk" (java package installed
 
 ```bashscript
 $ sudo dnf install glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686
-# Download from https://developer.android.com/studio/index.html
+```
+
+Download from <https://developer.android.com/studio/index.html> and in the SDK Tools Only section download the package for Linux at the bottom of the page.
+
+For all SDK Studio
+
+```bashscript
 $ wget https://dl.google.com/dl/android/studio/ide-zips/3.4.2.0/android-studio-ide-183.5692245-linux.tar.gz
 $ unzip android-studio*.zip
 $ sudo mv android-studio /opt/android-studio
-# cd /opt/android-studio && ./bin/studio.sh
+$ sudo cd /opt/android-studio && ./bin/studio.sh
+```
+
+From SDK Tools Only
+
+```bashscript
+$ wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+$ unzip sdk-tools-linux-*.zip
+$ sudo mkdir /usr/lib/android/sdk/
+$ sudo mv tools /usr/lib/android/sdk/tools
+```
+
+Add Environment vars
+
+```bashscript
 $ vim ~/.bashrc
-# Add final
 export ANDROID_HOME="/usr/lib/android/sdk/"
 export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
+$ sudo touch /root/.android/repositories.cfg
 $ sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
-# Tools > SDK Manager | Download the android platform
-# Tools > AVD Manager | Created a virtual device on android sdk
+$ cd $ANDROID_HOME/tools/bin
+$ sudo ./sdkmanager "system-images;android-25;google_apis;x86"
+$ sudo ./ avdmanager create avd -n test -k "system-images;android-25;google_apis;x86"
 ```
 
 ## Install NativeScript
@@ -55,5 +76,3 @@ $ sudo npm install nativescript -g --unsafe-perm
 $ ./$ANDROID_SDK/emulator/emulator -list-avds
 $ ./$ANDROID_SDK/emulator/emulator -avd Nexus_5_API_28
 ```
-
-Nada mas
