@@ -59,20 +59,27 @@ export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
 $ sudo touch /root/.android/repositories.cfg
 $ sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
 $ cd $ANDROID_HOME/tools/bin
-$ sudo ./sdkmanager "system-images;android-25;google_apis;x86"
-$ sudo ./ avdmanager create avd -n test -k "system-images;android-25;google_apis;x86"
+$ sudo ./sdkmanager "system-images;android-28;google_apis;x86"
+$ sudo ./avdmanager create avd -n test -k "system-images;android-28;google_apis;x86" -d "Nexus 4"
 ```
 
 ## Install NativeScript
 
 ```bashscript
 $ sudo npm install nativescript -g --unsafe-perm
-# tns doctor
+$ tns doctor
 ```
 
 ## Run Emulator
 
 ```bashscript
-$ ./$ANDROID_SDK/emulator/emulator -list-avds
-$ ./$ANDROID_SDK/emulator/emulator -avd Nexus_5_API_28
+$ cd $ANDROID_SDK/emulator/ && ./emulator -list-avds
+$ cd $ANDROID_SDK/emulator/ && ./emulator -avd device_name # Name from avd list
+```
+
+## Create a app
+
+```bashscript
+$ tns create <name> # choose your favorite languaje or framework
+$ tns run android --hmr
 ```

@@ -1,0 +1,14 @@
+<Page class="page" loaded="onLoaded" xmlns="http://schemas.nativescript.org/tns.xsd" actionBarHidden="true">
+
+    <FlexboxLayout class="page page-login">
+        <StackLayout class="flexbox-item company-name-container">
+            <Label class="t-30 company-name" text="Flying Nimbux"></Label>
+        </StackLayout>
+        <Image src="res://company_logo" stretch="none" class="company-logo"></Image>
+        <StackLayout class="flexbox-item">
+            <Label class="t-18 login-text" text="Iniciar volvado a la memoria USB."></Label>
+            <Button class="btn btn-login btn-rounded-sm font-weight-bold t-18" tap="bulkSelect" text="Volcar a USB"></Button>
+        </StackLayout>
+    </FlexboxLayout>
+
+</Page>
