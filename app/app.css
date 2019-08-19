@@ -22,8 +22,8 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 
 .btn {
-    color: #ffffff;
-    background-color: #3C59FD;
+    color: #000000;
+    background-color: #4bd13e;
     margin: 20 0 30 0;
 }
 
@@ -55,13 +55,13 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 .page-login {
     /*background-color: #3C59FD;*/
-    background: #4bd13e;
-    background: linear-gradient(0deg, #4bd13e 0%, #1b6bd3 100%);
-    background-color: #1b6bd3;
+    background: #ffffff;
+    /* background: linear-gradient(0deg, #4bd13e 0%, #1b6bd3 100%); */
+    background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
-    color: #ffffff;
+    color: #000000;
     flex-direction: column;
     align-items: center;
 }
@@ -82,13 +82,16 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 
 .btn-login {
-    color: #000000;
+    color: #4bd13e;
+    border-color: #4bd13e;
+    border-width: 6px;
     background-color: #ffffff;
 }
 
 .btn-login:highlighted {
-    background-color: #EAEAEA;
-    color: #000000;
+    background-color: #4bd13e;
+    border: none;
+    color: #ffffff;
 }
 
 /*  Welcome */
